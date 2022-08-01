@@ -41,10 +41,10 @@ public class UpdateServlet extends HttpServlet {
             Tasks t = em.find(Tasks.class, (Integer)(request.getSession().getAttribute("tasks_id")));
 
             // フォームの内容を各フィールドに上書き
-            String title = request.getParameter("tasks.title");
+            String title = request.getParameter("title");
             t.setTitle(title);
 
-            String content = request.getParameter("tasks.content");
+            String content = request.getParameter("content");
             t.setContent(content);
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());

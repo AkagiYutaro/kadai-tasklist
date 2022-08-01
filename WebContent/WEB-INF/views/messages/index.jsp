@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
-        <h2>メッセージ一覧</h2>
+        <h2>テキスト一覧</h2>
         <ul>
             <c:forEach var="tasks" items="${tasks}">
                 <li>
@@ -15,8 +15,8 @@
         </ul>
         
                 <div id="pagination">
-            （全 ${messages_count} 件）<br />
-            <c:forEach var="i" begin="1" end="${((messages_count - 1) / 15) + 1}" step="1">
+            （全 ${tasks_count} 件）<br />
+            <c:forEach var="i" begin="1" end="${((tasks_count - 1) / 15) + 1}" step="1">
                 <c:choose>
                     <c:when test="${i == page}">
                         <c:out value="${i}" />&nbsp;
@@ -28,7 +28,7 @@
             </c:forEach>
         </div>
 
-        <p><a href="${pageContext.request.contextPath}/new">新規メッセージの投稿</a></p>
+        <p><a href="${pageContext.request.contextPath}/new">新規テキストの投稿</a></p>
 
     </c:param>
 </c:import>
